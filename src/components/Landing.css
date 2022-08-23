@@ -1,0 +1,38 @@
+:root{
+    --background: #49416D;
+    --font: #E0EFDE;
+    --font-highlight: #E08D79;
+}
+
+.landing--container{
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 100vh;
+}
+
+.landing--text{
+    position: relative;
+    top: 40%;
+    margin: 0 auto;
+    color: var(--font);
+}
+
+.landing--name{
+    color: var(--font-highlight);
+}
+
+.landing--button{
+    font-size: 2rem;
+    background-color: transparent;
+    color: var(--font);
+    border: 2px solid #B3F2DD;
+    border-radius: 5px;
+}
+
+.landing--button:hover{
+    cursor: pointer;
+}
+
+body{
+    background-color: var(--background);
+}

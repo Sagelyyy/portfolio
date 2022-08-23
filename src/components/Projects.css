@@ -1,0 +1,15 @@
+:root{
+    --card-border: #E0EFDE;
+}
+
+.projects--container{
+    display: grid;
+    grid-template-columns: repeat(3, 500px);
+    grid-template-rows: repeat(2, 400px);
+    padding: 30px;
+}
+
+.projects--card{
+    border: 3px solid var(--card-border);
+    border-radius: 20px;
+}
