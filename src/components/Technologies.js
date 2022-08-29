@@ -3,8 +3,10 @@ import './Technologies.css'
 
 const Technologies = () => {
     return(
-        <duv>
+        <div>
             <h1>Hello Tech!</h1>
-        </duv>
+        </div>
     )
 }
+
+export default Technologies

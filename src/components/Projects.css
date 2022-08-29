@@ -3,13 +3,27 @@
 }
 
 .projects--container{
+    margin: 0 auto;
+    width: 70vw;
+    gap: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 500px);
-    grid-template-rows: repeat(2, 400px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
     padding: 30px;
 }
 
 .projects--card{
     border: 3px solid var(--card-border);
     border-radius: 20px;
+}
+
+
+@media screen and (max-width: 600px){
+    .projects--container{
+        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 200px);
+        padding: 30px;
+    }
 }

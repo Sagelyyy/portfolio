@@ -4,33 +4,52 @@
     --font-highlight: #E08D79;
 }
 
+canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+a{
+    text-decoration: none;
+}
+
 .landing--container{
     display: grid;
     grid-template-columns: 100vw;
     grid-template-rows: 100vh;
+
 }
 
 .landing--text{
+    border: 3px solid transparent;
     position: relative;
     top: 40%;
     margin: 0 auto;
     color: var(--font);
+    height: 200px;
 }
+
 
 .landing--name{
     color: var(--font-highlight);
 }
 
 .landing--button{
+    margin-top: 10px;
     font-size: 2rem;
+    padding: 5px;
     background-color: transparent;
     color: var(--font);
     border: 2px solid #B3F2DD;
     border-radius: 5px;
+    transition: all .2s ease-in-out;
 }
 
 .landing--button:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 body{
