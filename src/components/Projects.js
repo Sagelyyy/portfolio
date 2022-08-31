@@ -31,11 +31,6 @@ const Projects = () => {
                 <h1>Personal Bookshelf</h1>
                 <h4>A bookshelf to keep track of your books.</h4>
             </div>
-            <div id="projects" className='projects--card'>
-                <img className='projects--card--img' src={tempImage}></img>
-                <h1>Air Bnb Experiences</h1>
-                <h4>???</h4>
-            </div>
 
         </div>
     )

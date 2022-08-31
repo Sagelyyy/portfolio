@@ -4,10 +4,12 @@ import Landing from './components/Landing';
 import Projects from './components/Projects';
 import Technologies from './components/Technologies';
 import Contact from './components/Contact';
+import ContactSidebar from './components/ContactSidebar';
 
 function App() {
   return (
     <div className="App">
+      <ContactSidebar />
       <Landing />
       <Projects />
       <Technologies />

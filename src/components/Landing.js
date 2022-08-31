@@ -5,7 +5,7 @@ import { init } from '../utils/backgroundInit'
 
 const Landing = () => {
 
-    useEffect(() => {init()},[])
+    // useEffect(() => {init()},[])
 
     return (
 
