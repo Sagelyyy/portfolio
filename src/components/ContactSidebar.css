@@ -3,13 +3,15 @@
     flex-direction: column;
     position: sticky;
     align-items: center;
-    top: 100px;
-    right: -100px;
+    top: 35vh;
     gap: 10px;
     z-index: 100;
     width: 10vw;
 }
 
-.sidebar--container > img{
+.sidebar--container > a > img{
     max-width: 64px;
+    transition: all 0.5s ease-out;
 }
+
+.sidebar--container > a > img:hover{filter: drop-shadow(0px 0px 10px var(--highlight));}

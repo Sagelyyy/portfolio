@@ -1,0 +1,6 @@
+.scrollbar{
+    position: fixed;
+    background-color: var(--highlight);
+    width: 100vw;
+    height: 5px;
+}
