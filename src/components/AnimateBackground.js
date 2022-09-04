@@ -21,10 +21,11 @@ const AnimateBackground = () => {
         startingY: Math.floor(Math.random() * canvas.height),
         gravity: 0.5,
         radius: 2,
-        amount: 100,
-        groundLevel: canvas.height * 0.75,
-        leftWall: canvas.width * 0.25,
-        rightWall: canvas.width * 0.75
+        amount: 300,
+        top: 0,
+        groundLevel: canvas.height,
+        leftWall: 0,
+        rightWall: canvas.width
     }
 
     const particles = {}
@@ -33,18 +34,18 @@ const AnimateBackground = () => {
     class Dot {
         constructor() {
             // Set up starting pos and velocites
+            const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
             this.x = Math.floor(Math.random() * canvas.width)
             this.y = Math.floor(Math.random() * canvas.height)
 
             // Random velocities
-            this.vX = Math.random() * 0.2
-            this.vY = Math.random() * 0.1;
+            this.vX = plusOrMinus * 0.12;
+            this.vY = plusOrMinus * 0.15;
 
             particleIndex++;
             particles[particleIndex] = this;
             this.id = particleIndex;
 
-            console.log(this.x, this.y)
         }
     }
 
@@ -52,8 +53,33 @@ const AnimateBackground = () => {
         this.x += this.vX;
         this.y += this.vY;
 
+
         // // Adjust for gravity
         // this.vY += settings.gravity;
+
+        if ((this.y + settings.radius) > settings.groundLevel) {
+            this.vY *= -0.6;
+            this.vX *= 0.75;
+            this.y = settings.groundLevel - settings.radius;
+        }
+
+        if ((this.y - settings.radius) <= settings.top) {
+            console.log('top!')
+            this.vY *= -1;
+            this.vX *=  Math.random() * 0.5;
+            this.y = settings.top + settings.radius;
+        }
+
+        // Determine whether to bounce the particle off a wall
+        if (this.x - (settings.radius) <= settings.leftWall) {
+            this.vX *= -1;
+            this.x = settings.leftWall + (settings.radius);
+        }
+
+        if (this.x + (settings.radius) >= settings.rightWall) {
+            this.vX *= -1;
+            this.x = settings.rightWall - settings.radius;
+        }
 
         // Create the shapes
         // context.clearRect(settings.leftWall, settings.groundLevel, canvas.width, canvas.height);
