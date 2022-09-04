@@ -10,8 +10,11 @@ import AnimateBackground from './components/AnimateBackground';
 function App() {
   return (
     <div className="App">
+
       <Scrollbar />
       <ContactSidebar />
+      
+      
       <Landing />
       <AnimateBackground />
       <Projects />

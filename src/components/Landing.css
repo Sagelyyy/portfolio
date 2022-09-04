@@ -30,6 +30,7 @@ a{
     margin: 0 auto;
     color: var(--font);
     height: 200px;
+    z-index: 100;
 }
 
 

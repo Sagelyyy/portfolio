@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react'
-import { init } from '../utils/backgroundInit';
 import './AnimateBackground.css'
 
 
 const AnimateBackground = () => {
 
     const [loaded, setLoaded] = useState(false)
+    const [lastPos, setLastPos] = useState()
 
-    console.log('render')
-
-    var canvas = document.createElement("canvas");
-    var context = canvas.getContext("2d");
+    let canvas = document.createElement("canvas");
+    let context = canvas.getContext("2d");
     canvas.width = window.innerWidth - 20;
     canvas.height = window.innerHeight;
+
 
 
     const settings = {
@@ -49,14 +48,13 @@ const AnimateBackground = () => {
         }
     }
 
+
     Dot.prototype.draw = function () {
         this.x += this.vX;
         this.y += this.vY;
 
 
-        // // Adjust for gravity
-        // this.vY += settings.gravity;
-
+        // Determine if particles will hit floor or ceiling
         if ((this.y + settings.radius) > settings.groundLevel) {
             this.vY *= -0.6;
             this.vX *= 0.75;
@@ -64,9 +62,8 @@ const AnimateBackground = () => {
         }
 
         if ((this.y - settings.radius) <= settings.top) {
-            console.log('top!')
             this.vY *= -1;
-            this.vX *=  Math.random() * 0.5;
+            this.vX *= Math.random() * 0.5;
             this.y = settings.top + settings.radius;
         }
 
@@ -82,7 +79,7 @@ const AnimateBackground = () => {
         }
 
         // Create the shapes
-        // context.clearRect(settings.leftWall, settings.groundLevel, canvas.width, canvas.height);
+        context.clearRect(settings.leftWall, settings.groundLevel, canvas.width, canvas.height);
         context.beginPath();
         context.fillStyle = "#858AE3";
         // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
@@ -91,17 +88,17 @@ const AnimateBackground = () => {
         context.fill();
     }
 
-    document.body.appendChild(canvas);
-
 
     const init = () => {
         setInterval(function () {
-            context.fillStyle = '#49416D';
-            context.fillRect(0, 0, canvas.width, canvas.height);
+            // context.fillStyle = '#49416D';
+            // context.fillRect(0, 0, canvas.width, canvas.height);
+            context.clearRect(0, 0, canvas.width, canvas.height)
             for (let i in particles) {
                 particles[i].draw();
             }
         }, 30);
+        canvas.addEventListener('mousemove', ((evt) => { drawMouse(evt) }), false)
     }
 
     const spawnParticles = () => {
@@ -115,12 +112,52 @@ const AnimateBackground = () => {
         }
     }
 
+    const drawMouse = (evt) => {
+        let mousePos = getMousePos(canvas, evt);
+        setLastPos({ x: mousePos.x, y: mousePos.y })
+        console.log('Mouse position: ' + mousePos.x + ',' + mousePos.y);
+        context.beginPath();
+        context.lineWidth = 50;
+        context.lineCap = "round";
+        context.strokeStyle = "#ACD3ED";
+        context.moveTo(mousePos.x, mousePos.y);
+        // reposition(evt);
+        context.lineTo(mousePos.x, mousePos.y);
+        context.stroke();
+    }
+
+
+    const interval = setInterval(function () {
+        if (lastPos) {
+            console.log('interval')
+
+        }
+    }, 30);
+
     useEffect(() => {
+        clearInterval(interval)
+        console.log(lastPos)
+    }, [lastPos])
+
+
+
+    function getMousePos(canvas, evt) {
+        let rect = canvas.getBoundingClientRect();
+        return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+        };
+
+    }
+
+
+
+    useEffect(() => {
+        document.querySelector('.App').appendChild(canvas)
         spawnParticles()
         init()
-        console.log(particles)
-    }, [])
 
+    }, [])
 
 }
 
