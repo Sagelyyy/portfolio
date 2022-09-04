@@ -5,6 +5,7 @@ import Technologies from './components/Technologies';
 import Contact from './components/Contact';
 import ContactSidebar from './components/ContactSidebar';
 import Scrollbar from './components/Scrollbar';
+import AnimateBackground from './components/AnimateBackground';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Scrollbar />
       <ContactSidebar />
       <Landing />
+      <AnimateBackground />
       <Projects />
       <Technologies />
       <Contact />
