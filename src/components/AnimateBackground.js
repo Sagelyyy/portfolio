@@ -4,160 +4,141 @@ import './AnimateBackground.css'
 
 const AnimateBackground = () => {
 
-    const [loaded, setLoaded] = useState(false)
-    const [lastPos, setLastPos] = useState()
 
-    let canvas = document.createElement("canvas");
-    let context = canvas.getContext("2d");
-    canvas.width = window.innerWidth - 20;
-    canvas.height = window.innerHeight;
-
-
-
+    const canvas = document.createElement("canvas")
+    const ctx = canvas.getContext("2d")
+    
+    const cursor = 
+          {
+      x: Math.floor(Math.random() * canvas.width), 
+      y: Math.floor(Math.random() * canvas.height)
+          }
+      canvas.height = window.innerHeight - 50;
+      canvas.width = window.innerWidth - 50;
+    
     const settings = {
-        size: 10,
-        startingX: Math.floor(Math.random() * canvas.width),
-        startingY: Math.floor(Math.random() * canvas.height),
-        gravity: 0.5,
-        radius: 2,
-        amount: 300,
-        top: 0,
-        groundLevel: canvas.height,
-        leftWall: 0,
-        rightWall: canvas.width
+      cursorRadius: 50,
+      x: 100,
+      y: 100,
+      radius: 1,
+      density: 1000,
+      top: 0,
+      bottom: canvas.height,
+      left: 0,
+      right: canvas.width
     }
-
-    const particles = {}
-    let particleIndex = 0
-
-    class Dot {
-        constructor() {
-            // Set up starting pos and velocites
-            const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
-            this.x = Math.floor(Math.random() * canvas.width)
-            this.y = Math.floor(Math.random() * canvas.height)
-
-            // Random velocities
-            this.vX = plusOrMinus * 0.12;
-            this.vY = plusOrMinus * 0.15;
-
-            particleIndex++;
-            particles[particleIndex] = this;
-            this.id = particleIndex;
-
-        }
+    
+    const randomColor = () => {
+      const colors = ['#858AE3', '#E0EFDE', '#E08D79', '#EE6352']
+      return colors[Math.floor(Math.random()*colors.length)]
     }
-
-
-    Dot.prototype.draw = function () {
-        this.x += this.vX;
-        this.y += this.vY;
-
-
-        // Determine if particles will hit floor or ceiling
-        if ((this.y + settings.radius) > settings.groundLevel) {
-            this.vY *= -0.6;
-            this.vX *= 0.75;
-            this.y = settings.groundLevel - settings.radius;
-        }
-
-        if ((this.y - settings.radius) <= settings.top) {
-            this.vY *= -1;
-            this.vX *= Math.random() * 0.5;
-            this.y = settings.top + settings.radius;
-        }
-
-        // Determine whether to bounce the particle off a wall
-        if (this.x - (settings.radius) <= settings.leftWall) {
-            this.vX *= -1;
-            this.x = settings.leftWall + (settings.radius);
-        }
-
-        if (this.x + (settings.radius) >= settings.rightWall) {
-            this.vX *= -1;
-            this.x = settings.rightWall - settings.radius;
-        }
-
-        // Create the shapes
-        context.clearRect(settings.leftWall, settings.groundLevel, canvas.width, canvas.height);
-        context.beginPath();
-        context.fillStyle = "#858AE3";
-        // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-        context.arc(this.x, this.y, settings.radius, 0, Math.PI * 2, true);
-        context.closePath();
-        context.fill();
-    }
-
-
-    const init = () => {
-        setInterval(function () {
-            // context.fillStyle = '#49416D';
-            // context.fillRect(0, 0, canvas.width, canvas.height);
-            context.clearRect(0, 0, canvas.width, canvas.height)
-            for (let i in particles) {
-                particles[i].draw();
+    
+    
+    const dots = []
+    
+    class Particle {
+      constructor(){
+         this.x = Math.floor(Math.random() * canvas.width)
+         this.y = Math.floor(Math.random() * canvas.height)
+         this.rColor = randomColor()
+        
+         const plusOrMinus = Math.random() < 0.5 ? -1 : 1; 
+         this.vX = plusOrMinus * Math.random() * 0.04
+         this.vY = plusOrMinus * Math.random() * 0.05
+      }
+      
+    
+      
+      draw = () => {
+            requestAnimationFrame(this.draw)
+            this.x += this.vX
+            this.y += this.vY
+            ctx.beginPath();
+            ctx.fillStyle = "#858AE3";
+            ctx.arc(this.x, this.y, settings.radius, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fill();
+        
+        // Collision with wall detection
+        
+          if ((this.y + settings.radius) > settings.bottom) {
+                this.vY *= -1.1;
+                this.vX *= 0.5;
+                this.y = settings.bottom - settings.radius;
             }
-        }, 30);
-        canvas.addEventListener('mousemove', ((evt) => { drawMouse(evt) }), false)
+    
+            if ((this.y - settings.radius) <= settings.top) {
+                this.vY *= -1.1;
+                this.vX *=  0.5;
+                this.y = settings.top + settings.radius;
+            }
+    
+            if (this.x - (settings.radius) <= settings.left) {
+                this.vX *= -1;
+                this.vY *= -0.5;
+                this.x = settings.left + (settings.radius);
+            }
+    
+            if (this.x + (settings.radius) >= settings.right) {
+                this.vX *= -1;
+                this.vY *= -0.5;
+                this.x = settings.right - settings.radius;
+            }
+        
+        // Collision with mouse detection
+        
+            if(this.x + settings.cursorRadius >= cursor.x && this.x -settings.cursorRadius <= cursor.x &&
+              this.y + settings.cursorRadius >= cursor.y && this.y -settings.cursorRadius <= cursor.y){
+              // this.vX *= -1.001
+              // this.vY *= -1.001
+              ctx.arc(this.x, this.y, settings.radius +1, 0, Math.PI * 2, true);
+              ctx.fillStyle = this.rColor;
+              ctx.fill()
+    
+            }
+      }
     }
-
+    
+    const animate = (item) => {
+      requestAnimationFrame(item)
+    }
+    
     const spawnParticles = () => {
-        if (!loaded) {
-            for (let i = 0; i < settings.amount; i++) {
-                new Dot()
-                if (i >= settings.density) {
-                    setLoaded(true)
-                }
-            }
-        }
+      for(let i = 0; i < settings.density; i += 1){
+        dots.push(new Particle())
+      }
     }
-
-    const drawMouse = (evt) => {
-        let mousePos = getMousePos(canvas, evt);
-        setLastPos({ x: mousePos.x, y: mousePos.y })
-        console.log('Mouse position: ' + mousePos.x + ',' + mousePos.y);
-        context.beginPath();
-        context.lineWidth = 50;
-        context.lineCap = "round";
-        context.strokeStyle = "#ACD3ED";
-        context.moveTo(mousePos.x, mousePos.y);
-        // reposition(evt);
-        context.lineTo(mousePos.x, mousePos.y);
-        context.stroke();
+    
+    
+    const init = () => {
+      sphere()
+      spawnParticles()
+      for(let i in dots){
+        dots[i].draw()
+      }
     }
-
-
-    const interval = setInterval(function () {
-        if (lastPos) {
-            console.log('interval')
-
-        }
-    }, 30);
-
-    useEffect(() => {
-        clearInterval(interval)
-        console.log(lastPos)
-    }, [lastPos])
-
-
-
-    function getMousePos(canvas, evt) {
-        let rect = canvas.getBoundingClientRect();
-        return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
-        };
-
+    
+    canvas.addEventListener("mousemove", (e) => 
+     {
+      cursor.x = e.clientX
+      cursor.y = e.clientY
+    })
+    
+    const sphere = () => {
+    
+      animate(sphere)
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.fillStyle = "#49416D"
+      ctx.beginPath()
+      ctx.arc(cursor.x, cursor.y, settings.cursorRadius, 0, 2 * Math.PI);
+      ctx.fill()
+    
     }
-
-
-
-    useEffect(() => {
+    
+    useEffect(() =>{
         document.querySelector('.App').appendChild(canvas)
-        spawnParticles()
         init()
-
-    }, [])
+    })
 
 }
 
