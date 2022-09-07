@@ -2,19 +2,46 @@
     --card-border: #E0EFDE;
 }
 
+*{
+    color: var(--font);
+}
+
 .projects--container{
     margin: 0 auto;
     width: 70vw;
-    gap: 10px;
+    gap: 40px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 300px);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 600px);
     padding: 30px;
 }
 
 .projects--card{
+    display: flex;
     border: 3px solid var(--card-border);
     border-radius: 20px;
+}
+
+.projects--card:nth-child(odd){
+    margin-left: 10vw;
+}
+
+.projects--card:nth-child(even){
+    margin-right: 10vw;
+}
+
+.projects--card--img{
+    position: relative;
+    padding: 10px;
+    width: 85%;
+}
+
+.projects--card--img img{
+    width: 100%;
+}
+
+.projects--card--info{
+    padding: 10px;
 }
 
 

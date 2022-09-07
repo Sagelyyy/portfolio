@@ -1,11 +1,7 @@
 import './Landing.css'
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
-import { init } from '../utils/backgroundInit'
 
 const Landing = () => {
-
-    // useEffect(() => {init()},[])
 
     return (
 
