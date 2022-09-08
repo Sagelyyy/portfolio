@@ -55,7 +55,9 @@
 }
 
 .projects--card--info{
+    top: 8rem;
     padding: 10px;
+    position: relative;
 }
 
 
