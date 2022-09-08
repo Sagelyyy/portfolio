@@ -21,7 +21,7 @@ const AnimateBackground = () => {
       x: 100,
       y: 100,
       radius: 1,
-      density: 1000,
+      density: 1500,
       top: 0,
       bottom: canvas.height,
       left: 0,
@@ -43,8 +43,8 @@ const AnimateBackground = () => {
          this.rColor = randomColor()
         
          const plusOrMinus = Math.random() < 0.5 ? -1 : 1; 
-         this.vX = plusOrMinus * Math.random() * 0.04
-         this.vY = plusOrMinus * Math.random() * 0.05
+         this.vX = plusOrMinus * Math.random() * 0.07
+         this.vY = plusOrMinus * Math.random() * 0.07
       }
       
     
