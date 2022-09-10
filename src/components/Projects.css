@@ -20,14 +20,15 @@
 .projects--card{
     display: flex;
     border-radius: 20px;
+    gap: 40px;
 }
 
 .projects--card:nth-child(odd){
-    margin-left: 10vw;
+    margin-left: 20vw;
 }
 
 .projects--card:nth-child(even){
-    margin-right: 10vw;
+    margin-right: 20vw;
 }
 
 .projects--card--img{
@@ -47,7 +48,9 @@
     background-color: var(--bright-highlight);
 }
 
+
 .projects--card--img img{
+    position: relative;
     width: 100%;
     height: 95%;
     object-fit: cover;
