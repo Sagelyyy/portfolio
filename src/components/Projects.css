@@ -90,10 +90,26 @@
 
 @media screen and (max-width: 600px) {
     .projects--container {
+        position: relative;
+        margin: 0 auto;
         gap: 10px;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 200px);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 600px);
         padding: 30px;
+    }
+
+    .projects--card--img img {
+        position: relative;
+        width: 90vw;
+        height: 95%;
+        object-fit: cover;
+        object-position: left;
+        border-radius: var(--border-rad);
+    }
+
+    .projects--card--info{
+        font-size: 30px;
+        top: 3rem;
     }
 }
