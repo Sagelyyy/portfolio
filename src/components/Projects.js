@@ -24,7 +24,8 @@ const Projects = () => {
                 right={true}
                 img="https://camo.githubusercontent.com/112c13846f21a9f14f698439a01cba2f9c8824409c45b6cd986fcf7ee1014b03/68747470733a2f2f692e696d6775722e636f6d2f69494c694542302e6a7067"
                 title="Bookshelf"
-                subText="A personal bookshelf using react and firebase with google auth to save your books"
+                subText="A personal bookshelf"
+                summary="A fullstack personal library built using react and firebase with google auth to save your books"
             />
         </div>
     )

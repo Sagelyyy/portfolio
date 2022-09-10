@@ -10,7 +10,7 @@ const ProjectCard = (props) => {
                     </img>
                 </div>
                 <div className='projects--card--info'>
-                    <h1>{props.title}</h1>
+                    <h1 className="projects--card--title">{props.title}</h1>
                     <h4>{props.subText}</h4>
                     <p>{props.summary}</p>
                 </div>
@@ -18,7 +18,7 @@ const ProjectCard = (props) => {
 
             <div id="projects" className='projects--card'>
                 <div className='projects--card--info'>
-                    <h1>{props.title}</h1>
+                    <h1 className="projects--card--title">{props.title}</h1>
                     <h4>{props.subText}</h4>
                     <p>{props.summary}</p>
                 </div>
