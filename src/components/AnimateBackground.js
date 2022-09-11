@@ -4,8 +4,6 @@ import './AnimateBackground.css'
 
 const AnimateBackground = () => {
 
-  console.log('render!')
-
   const canvas = useRef()
   const [ctx, setCtx] = useState()
   const [dimensions, setDimensions] = useState({ height: window.innerHeight - 50, width: window.innerWidth - 50 })
@@ -146,7 +144,6 @@ const AnimateBackground = () => {
 
 
   const sphere = () => {
-    console.log(cursor)
     animate(sphere)
     ctx.clearRect(0, 0, dimensions.width, dimensions.height)
     ctx.fillStyle = "#49416D"

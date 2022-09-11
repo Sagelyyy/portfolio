@@ -64,7 +64,7 @@
     width: 60rem;
     height: 37rem;
     z-index: -2;
-    border-radius: 10px;
+    border-radius: var(--border-rad);
     background-color: var(--bright-highlight);
 }
 
@@ -85,6 +85,36 @@
     top: 8rem;
     padding: 10px;
     position: relative;
+}
+
+.projects--card--button{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    font-size: 20px;
+    width: fit-content;
+    align-self: center;
+}
+
+.projects--card--button:hover{
+    cursor: pointer;
+}
+
+.projects--card--button::after{
+    position: relative;
+    content: '';
+    height: 2px;
+    background-color: var(--font-highlight);
+    width: 100%;
+    bottom: 1px;
+    display: block;
+    transform-origin: bottom;
+    transition: all 0.25s;
+    z-index: 0;
+}
+
+.projects--card--button:hover::after{
+    height: 10px;
 }
 
 

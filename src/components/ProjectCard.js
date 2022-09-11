@@ -13,6 +13,8 @@ const ProjectCard = (props) => {
                     <h1 className="projects--card--title">{props.title}</h1>
                     <h4>{props.subText}</h4>
                     <p>{props.summary}</p>
+                    <div className="projects--card--button">Preview</div>
+                    <div className="projects--card--button">Repository</div>
                 </div>
             </div> :
 
@@ -21,6 +23,8 @@ const ProjectCard = (props) => {
                     <h1 className="projects--card--title">{props.title}</h1>
                     <h4>{props.subText}</h4>
                     <p>{props.summary}</p>
+                    <div className="projects--card--button">Preview</div>
+                    <div className="projects--card--button">Repository</div>
                 </div>
                 <div className='projects--card--img'>
                     <img
