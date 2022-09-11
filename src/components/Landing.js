@@ -5,7 +5,7 @@ const Landing = () => {
 
     return (
 
-        <div className='landing--container'>
+        <div id="main" className='landing--container'>
             <motion.div className='landing--text' drag dragConstraints={{ left: 50, right: 50, top: -100, bottom: 100 }}>
             
                 <h1>Hi 👋, I'm <span className='landing--name'>Chris Weiskopf</span></h1>

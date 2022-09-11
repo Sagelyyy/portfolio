@@ -1,11 +1,15 @@
+import { motion } from "framer-motion"
+
+
 const ProjectCard = (props) => {
     return (
 
         props.right ?
 
-            <div id="projects" className='projects--card'>
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+                id="projects" className='projects--card'>
                 <div className='projects--card--img'>
-                    <img
+                    <img 
                         src={props.img}>
                     </img>
                 </div>
@@ -16,9 +20,9 @@ const ProjectCard = (props) => {
                     <div className="projects--card--button">Preview</div>
                     <div className="projects--card--button">Repository</div>
                 </div>
-            </div> :
+            </motion.div> :
 
-            <div id="projects" className='projects--card'>
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id="projects" className='projects--card'>
                 <div className='projects--card--info'>
                     <h1 className="projects--card--title">{props.title}</h1>
                     <h4>{props.subText}</h4>
@@ -31,7 +35,7 @@ const ProjectCard = (props) => {
                         src={props.img}>
                     </img>
                 </div>
-            </div>
+            </motion.div>
     )
 }
 

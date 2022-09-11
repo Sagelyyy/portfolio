@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import ContactSidebar from './components/ContactSidebar';
 import Scrollbar from './components/Scrollbar';
 import AnimateBackground from './components/AnimateBackground';
+import ReturnToTop from './components/ReturnToTop';
 
 function App() {
   return (
@@ -13,13 +14,12 @@ function App() {
 
       <Scrollbar />
       <ContactSidebar />
-      
-      
       <Landing />
       <AnimateBackground />
       <Projects />
       <Technologies />
       <Contact />
+      <ReturnToTop />
     </div>
   );
 }
