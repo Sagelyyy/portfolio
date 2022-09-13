@@ -6,7 +6,7 @@ const AnimateBackground = () => {
 
   const canvas = useRef()
   const [ctx, setCtx] = useState()
-  const [dimensions, setDimensions] = useState({ height: window.innerHeight - 50, width: window.innerWidth - 50 })
+  const [dimensions, setDimensions] = useState({ height: window.innerHeight, width: window.innerWidth - 15 })
   const [settings, setSettings] = useState({
     cursorRadius: 50,
     x: 100,
@@ -84,25 +84,25 @@ const AnimateBackground = () => {
         if ((this.y + settings.radius) > settings.bottom) {
           this.vY *= -1.1;
           this.vX *= 0.5;
-          this.y = settings.bottom - settings.radius;
+          this.y = Math.floor(settings.bottom - settings.radius);
         }
 
         if ((this.y - settings.radius) <= settings.top) {
           this.vY *= -1.1;
           this.vX *= 0.5;
-          this.y = settings.top + settings.radius;
+          this.y = Math.floor(settings.top + settings.radius);
         }
 
         if (this.x - (settings.radius) <= settings.left) {
           this.vX *= -1;
           this.vY *= -0.5;
-          this.x = settings.left + (settings.radius);
+          this.x = Math.floor(settings.left + settings.radius);
         }
 
         if (this.x + (settings.radius) >= settings.right) {
           this.vX *= -1;
           this.vY *= -0.5;
-          this.x = settings.right - settings.radius;
+          this.x = Math.floor(settings.right - settings.radius);
         }
 
         if (this.x + settings.cursorRadius >= cursor.x && this.x - settings.cursorRadius <= cursor.x &&
@@ -148,7 +148,7 @@ const AnimateBackground = () => {
     ctx.clearRect(0, 0, dimensions.width, dimensions.height)
     ctx.fillStyle = "#49416D"
     ctx.beginPath()
-    ctx.arc(cursor.x, cursor.y, settings.cursorRadius, 0, 2 * Math.PI);
+    ctx.arc(Math.floor(cursor.x), Math.floor(cursor.y), settings.cursorRadius, 0, 2 * Math.PI);
     ctx.fill()
   }
 

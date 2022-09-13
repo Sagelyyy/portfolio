@@ -24,7 +24,8 @@ const ProjectCard = (props) => {
                 id="projects" className='projects--card'>
                 <div className='projects--card--img'>
                     <img
-                        src={props.img}>
+                        src={props.img}
+                        alt={props.alt}>
                     </img>
                 </div>
                 <div className='projects--card--info'>
@@ -55,7 +56,8 @@ const ProjectCard = (props) => {
                 </div>
                 <div className='projects--card--img'>
                     <img
-                        src={props.img}>
+                        src={props.img}
+                        alt={props.alt}>
                     </img>
                 </div>
             </motion.div>
