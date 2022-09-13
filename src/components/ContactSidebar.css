@@ -1,7 +1,7 @@
 .sidebar--container{
     display: flex;
     flex-direction: column;
-    position: sticky;
+    position: fixed;
     align-items: center;
     top: 35vh;
     gap: 10px;

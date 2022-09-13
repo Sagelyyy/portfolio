@@ -1,15 +1,29 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 
 const ProjectCard = (props) => {
+
+    const varients = {
+        offScreen: { x: - 100 },
+        onScreen: { x: 0 }
+    }
+
     return (
 
         props.right ?
 
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                variants={{
+                    visible: { opacity: 1, x: 0 },
+                    hidden: { opacity: 0, x: -200 }
+                }}
                 id="projects" className='projects--card'>
                 <div className='projects--card--img'>
-                    <img 
+                    <img
                         src={props.img}>
                     </img>
                 </div>
@@ -22,7 +36,16 @@ const ProjectCard = (props) => {
                 </div>
             </motion.div> :
 
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id="projects" className='projects--card'>
+            <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: 200 }
+            }}
+            id="projects" className='projects--card'>
                 <div className='projects--card--info'>
                     <h1 className="projects--card--title">{props.title}</h1>
                     <h4>{props.subText}</h4>
