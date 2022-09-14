@@ -5,25 +5,14 @@
     --highlight: #858AE3;
 }
 
-canvas{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
 a{
     text-decoration: none;
 }
 
 .landing--container{
-    display: grid;
-    grid-template-columns: 100vw;
-    grid-template-rows: 100vh;
-}
-
-.landing--container:hover{
-    cursor: grabbing;
+    display: flex;
+    width: 99vw;
+    height: 99vh;
 }
 
 .landing--text{
@@ -34,6 +23,10 @@ a{
     color: var(--font);
     height: 200px;
     z-index: 100;
+}
+
+.landing--text:hover{
+    cursor: grabbing;
 }
 
 

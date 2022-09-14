@@ -6,7 +6,7 @@ const AnimateBackground = () => {
 
   const canvas = useRef()
   const [ctx, setCtx] = useState()
-  const [dimensions, setDimensions] = useState({ height: window.innerHeight, width: window.innerWidth - 15 })
+  const [dimensions, setDimensions] = useState({ height: window.innerHeight, width: window.innerWidth - 50 })
   const [settings, setSettings] = useState({
     cursorRadius: 50,
     x: 100,
@@ -41,9 +41,9 @@ const AnimateBackground = () => {
 
   useEffect(() => {
     if (loaded) {
-      canvas.current.addEventListener("mousemove", (e) => {
+      document.body.addEventListener("mousemove", (e) => {
         cursor.x = e.clientX
-        cursor.y = e.clientY + getScroll()
+        cursor.y = e.clientY 
       })
       init()
     }

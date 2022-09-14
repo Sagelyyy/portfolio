@@ -11,11 +11,10 @@ import ReturnToTop from './components/ReturnToTop';
 function App() {
   return (
     <div className="App">
-
+      <AnimateBackground />
       <Scrollbar />
       <ContactSidebar />
       <Landing />
-      <AnimateBackground />
       <Projects />
       <Technologies />
       <Contact />
