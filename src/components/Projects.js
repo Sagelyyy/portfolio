@@ -1,11 +1,11 @@
 import ProjectCard from './ProjectCard'
 import './Projects.css'
+import Title from './Title'
 
 const Projects = () => {
-
-    const tempImage = 'https://placekitten.com/400/150'
     return (
         <div className='projects--container'>
+            <Title title="Projects" />
             <ProjectCard
                 right={true}
                 img="https://camo.githubusercontent.com/e1590875694ed0939c7a89d69f5966cf4dca53d637e5f925eee721948d4bf31c/68747470733a2f2f692e696d6775722e636f6d2f6e4d61786856742e706e67"

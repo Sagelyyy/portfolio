@@ -1,7 +1,7 @@
 import './App.css';
 import Landing from './components/Landing';
 import Projects from './components/Projects';
-import Technologies from './components/Technologies';
+import About from './components/About';
 import Contact from './components/Contact';
 import ContactSidebar from './components/ContactSidebar';
 import Scrollbar from './components/Scrollbar';
@@ -16,7 +16,7 @@ function App() {
       <ContactSidebar />
       <Landing />
       <Projects />
-      <Technologies />
+      <About />
       <Contact />
       <ReturnToTop />
     </div>
