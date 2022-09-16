@@ -15,8 +15,8 @@ function App() {
       <Scrollbar />
       <ContactSidebar />
       <Landing />
-      <Projects />
       <About />
+      <Projects />
       <Contact />
       <ReturnToTop />
     </div>
