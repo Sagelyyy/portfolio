@@ -1,0 +1,19 @@
+.contact--container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    gap: 5px;
+}
+
+::placeholder{
+    color: var(--font);
+}
+
+.contact--container input,
+.contact--container textarea{
+    border: none;
+    color: white;
+    background-color: var(--highlight);
+    padding: 10px;
+}
