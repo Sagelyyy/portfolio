@@ -7,6 +7,7 @@ import ContactSidebar from './components/ContactSidebar';
 import Scrollbar from './components/Scrollbar';
 import AnimateBackground from './components/AnimateBackground';
 import ReturnToTop from './components/ReturnToTop';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Projects />
       <Contact />
       <ReturnToTop />
+      <Footer />
     </div>
   );
 }

@@ -2,9 +2,11 @@ import './Button.css'
 
 
 const Button = (props) => {
-    return(
+    return (
         <div className="button--container">
-            <div className="button--button">{props.name}</div>
+            <a href={props.href} target="_blank">
+                <div className="button--button">{props.name}</div>
+            </a>
         </div>
     )
 }

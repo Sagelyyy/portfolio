@@ -17,3 +17,7 @@
     background-color: var(--highlight);
     padding: 10px;
 }
+
+.contact--container p {
+    padding-bottom: 20px;
+}

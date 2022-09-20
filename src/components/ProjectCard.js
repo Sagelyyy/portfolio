@@ -33,8 +33,8 @@ const ProjectCard = (props) => {
                     <h1 className="projects--card--title">{props.title}</h1>
                     <h4>{props.subText}</h4>
                     <p>{props.summary}</p>
-                    <Button name="Preview" />
-                    <Button name="Repository" />
+                    {props.preview}
+                    {props.repo}
                 </div>
             </motion.div> :
 
@@ -52,8 +52,8 @@ const ProjectCard = (props) => {
                     <h1 className="projects--card--title">{props.title}</h1>
                     <h4>{props.subText}</h4>
                     <p>{props.summary}</p>
-                    <Button name="Preview" />
-                    <Button name="Repository" />
+                    {props.preview}
+                    {props.repo}
                 </div>
                 <div className='projects--card--img'>
                     <img

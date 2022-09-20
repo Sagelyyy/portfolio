@@ -1,6 +1,7 @@
 import ProjectCard from './ProjectCard'
 import './Projects.css'
 import Title from './Title'
+import Button from './Button'
 
 const Projects = () => {
     return (
@@ -13,6 +14,8 @@ const Projects = () => {
                 title="HoloScript"
                 subText="A Twitter Clone"
                 summary="A fullstack social media app built with React and firebase."
+                preview={<Button name="Preview" href="https://sagelyyy.github.io/holoscript/"/>}
+                repo={<Button name="Repository" href="https://github.com/Sagelyyy/holoscript"/>}
             />
             <ProjectCard
                 right={false}
@@ -21,6 +24,8 @@ const Projects = () => {
                 title="Where's Waldo"
                 subText="A puzzle adventure game"
                 summary="A fullstack game built with react and firebase for scoring"
+                preview={<Button name="Preview" href="https://sagelyyy.github.io/wheres-waldo/"/>}
+                repo={<Button name="Repository" href="https://github.com/Sagelyyy/wheres-waldo"/>}
             />
             <ProjectCard
                 right={true}
@@ -29,6 +34,8 @@ const Projects = () => {
                 title="Bookshelf"
                 subText="A personal bookshelf"
                 summary="A fullstack personal library built using react and firebase with google auth to save your books"
+                preview={<Button name="Preview" href="https://sagelyyy.github.io/react-bookshelf/"/>}
+                repo={<Button name="Repository" href="https://github.com/Sagelyyy/react-bookshelf"/>}
             />
         </div>
     )
