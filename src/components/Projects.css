@@ -18,20 +18,12 @@
     padding: 30px;
 }
 
-#projects>div.projects--card--info>h1::before {
-    position: relative;
-    content: '';
-    border-bottom: 18px solid var(--font-highlight);
-    width: 12.5rem;
-    display: block;
-    margin: 0 auto;
-    left: 1.5rem;
-    top: 2.4rem;
-    z-index: -1;
+#projects > div.projects--card--info > h1 > div > h1{
+    font-size: 40px;
 }
 
-.projects--card--title{
-    z-index: 999;
+#projects > div.projects--card--info > h1 > div{
+    height: 50px;
 }
 
 .projects--card {
@@ -45,8 +37,20 @@
     margin-left: 20vw;
 }
 
+.projects--card--info:nth-child(odd) {
+    margin-left: 2vw;
+    align-items: flex-start;
+    text-align: left;
+}
+
 .projects--card:nth-child(even) {
     margin-right: 20vw;
+}
+
+.projects--card--info:nth-child(even) {
+    margin-right: 2vw;
+    align-items: flex-end;
+    text-align: left;
 }
 
 .projects--card--img {
@@ -79,7 +83,7 @@
 .projects--card--info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     top: 8rem;
     padding: 10px;
     position: relative;

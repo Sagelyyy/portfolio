@@ -1,7 +1,7 @@
 .title--text::after{
     position: relative;
     content: '';
-    border-bottom: 18px solid var(--bright-highlight);
+    border-bottom: 18px solid var(--font-highlight);
     width: 13.5rem;
     display: block;
     margin: 0 auto;
