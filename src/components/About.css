@@ -11,6 +11,10 @@
     width: 30%;
 }
 
+.about--text p {
+    font-family: var(--font-secondary);
+}
+
 .about--technologies{
     display: grid;
     gap: 10px;

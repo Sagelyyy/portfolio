@@ -12,6 +12,7 @@
     z-index: 2;
     overflow: hidden;
     border-bottom: 2px solid var(--font-highlight);
+    font-family: var(--font-secondary);
 }
 
 .button--button:hover {

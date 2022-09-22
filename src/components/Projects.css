@@ -50,7 +50,7 @@
 .projects--card--info:nth-child(even) {
     margin-right: 2vw;
     align-items: flex-end;
-    text-align: left;
+    text-align: right;
 }
 
 .projects--card--img {

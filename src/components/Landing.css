@@ -5,6 +5,8 @@
     --highlight: #858AE3;
     --card-border: #E0EFDE;
     --bright-highlight: #EE6352;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
 }
 
 a{
