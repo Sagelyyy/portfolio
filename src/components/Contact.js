@@ -23,6 +23,7 @@ const Contact = () => {
             email: '',
             message: ''
         })
+        setSubmitted(true)
     }
 
     const handleChange = (e) => {

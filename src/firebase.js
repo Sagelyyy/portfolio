@@ -28,7 +28,7 @@ const storage = getStorage();
 
 const sendEmail = async (emailData) => {
     const emailRef = await addDoc(collection(db, "email"), emailData)
-    console.log("Document written with ID: ", emailRef.id, emailRef.data());
+    console.log("Document written with ID: ", emailRef.id);
 }
 
 export { db, auth, storage, sendEmail };
