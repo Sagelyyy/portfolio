@@ -14,27 +14,27 @@ const About = () => {
                 </div>
                 <div className="about--technologies">
                     <div className="about--tech--container">
-                        <i class="devicon-html5-plain colored"></i>
+                        <i className="devicon-html5-plain colored"></i>
                         <p>HTML5</p>
                     </div>
                     <div className="about--tech--container">
-                        <i class="devicon-firebase-plain colored"></i>
+                        <i className="devicon-firebase-plain colored"></i>
                         <p>FIREBASE</p>
                     </div>
                     <div className="about--tech--container">
-                        <i class="devicon-css3-plain colored"></i>
+                        <i className="devicon-css3-plain colored"></i>
                         <p>CSS</p>
                     </div>
                     <div className="about--tech--container">
-                        <i class="devicon-react-original colored"></i>
+                        <i className="devicon-react-original colored"></i>
                         <p>REACT</p>
                     </div>
                     <div className="about--tech--container">
-                        <i class="devicon-javascript-plain colored"></i>
+                        <i className="devicon-javascript-plain colored"></i>
                         <p>JAVASCRIPT</p>
                     </div>
                     <div className="about--tech--container">
-                        <i class="devicon-git-plain colored"></i>
+                        <i className="devicon-git-plain colored"></i>
                         <p>GIT</p>
                     </div>
 
