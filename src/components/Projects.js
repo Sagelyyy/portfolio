@@ -5,7 +5,7 @@ import Button from './Button'
 
 const Projects = () => {
     return (
-        <div className='projects--container'>
+        <div id="projects" className='projects--container'>
             <Title title="Projects" />
             <ProjectCard
                 right={true}
@@ -14,8 +14,8 @@ const Projects = () => {
                 title={<Title title="Holoscript" />}
                 subText="A Twitter Clone"
                 summary="A fullstack social media app built with React and firebase."
-                preview={<Button name="Preview" href="https://sagelyyy.github.io/holoscript/"/>}
-                repo={<Button name="Repository" href="https://github.com/Sagelyyy/holoscript"/>}
+                preview={<Button name="Preview" href="https://sagelyyy.github.io/holoscript/" target="_blank" />}
+                repo={<Button name="Repository" href="https://github.com/Sagelyyy/holoscript" target="_blank" />}
             />
             <ProjectCard
                 right={false}
@@ -24,8 +24,8 @@ const Projects = () => {
                 title={<Title title="Waldo" />}
                 subText="A puzzle adventure game"
                 summary="A fullstack game built with react and firebase for scoring"
-                preview={<Button name="Preview" href="https://sagelyyy.github.io/wheres-waldo/"/>}
-                repo={<Button name="Repository" href="https://github.com/Sagelyyy/wheres-waldo"/>}
+                preview={<Button name="Preview" href="https://sagelyyy.github.io/wheres-waldo/" target="_blank" />}
+                repo={<Button name="Repository" href="https://github.com/Sagelyyy/wheres-waldo" target="_blank" />}
             />
             <ProjectCard
                 right={true}
@@ -34,8 +34,8 @@ const Projects = () => {
                 title={<Title title="Bookshelf" />}
                 subText="A personal bookshelf"
                 summary="A fullstack personal library built using react and firebase with google auth to save your books"
-                preview={<Button name="Preview" href="https://sagelyyy.github.io/react-bookshelf/"/>}
-                repo={<Button name="Repository" href="https://github.com/Sagelyyy/react-bookshelf"/>}
+                preview={<Button name="Preview" href="https://sagelyyy.github.io/react-bookshelf/" target="_blank" />}
+                repo={<Button name="Repository" href="https://github.com/Sagelyyy/react-bookshelf" target="_blank" />}
             />
         </div>
     )
