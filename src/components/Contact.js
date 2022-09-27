@@ -14,7 +14,6 @@ const Contact = () => {
 
     const [submitted, setSubmitted] = useState(false)
 
-
     const handleSubmit = (e) => {
         e.preventDefault()
         sendEmail(formData)
