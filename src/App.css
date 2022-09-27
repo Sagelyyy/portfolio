@@ -11,7 +11,12 @@ p, h4{
 
 html,
 body {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .App {

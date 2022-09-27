@@ -8,11 +8,11 @@ const AnimateBackground = () => {
   const [ctx, setCtx] = useState()
   const [dimensions, setDimensions] = useState({ height: window.innerHeight, width: window.innerWidth - 50 })
   const [settings, setSettings] = useState({
-    cursorRadius: 50,
+    cursorRadius: 100,
     x: 100,
     y: 100,
-    radius: 1,
-    density: 1500,
+    radius: 3,
+    density: 200,
     top: 0,
     left: 0,
   })
@@ -43,7 +43,7 @@ const AnimateBackground = () => {
     if (loaded) {
       document.body.addEventListener("mousemove", (e) => {
         cursor.x = e.clientX
-        cursor.y = e.clientY 
+        cursor.y = e.clientY
       })
       init()
     }
@@ -107,8 +107,6 @@ const AnimateBackground = () => {
 
         if (this.x + settings.cursorRadius >= cursor.x && this.x - settings.cursorRadius <= cursor.x &&
           this.y + settings.cursorRadius >= cursor.y && this.y - settings.cursorRadius <= cursor.y) {
-          // this.vX *= -1.001
-          // this.vY *= -1.001
           ctx.arc(this.x, this.y, settings.radius + 1, 0, Math.PI * 2, true);
           ctx.fillStyle = this.rColor;
           ctx.fill()
@@ -121,10 +119,6 @@ const AnimateBackground = () => {
     requestAnimationFrame(item)
   }
 
-  const getScroll = () => {
-    let htmlScroll = document.getElementsByTagName('html')[0].scrollTop
-    return htmlScroll
-  }
 
   const spawnParticles = () => {
     for (let i = 0; i < settings.density; i += 1) {
