@@ -18,11 +18,11 @@
     padding: 30px;
 }
 
-#projects > div.projects--card--info > h1 > div > h1{
+#projects>div.projects--card--info>h1>div>h1 {
     font-size: 40px;
 }
 
-#projects > div.projects--card--info > h1 > div{
+#projects>div.projects--card--info>h1>div {
     height: 50px;
 }
 
@@ -73,11 +73,13 @@
 
 .projects--card--img img {
     position: relative;
+    display: block;
     width: 100%;
     height: 95%;
     object-fit: cover;
     object-position: left;
     border-radius: var(--border-rad);
+    aspect-ratio: 1 / 1;
 }
 
 .projects--card--info {
@@ -89,7 +91,7 @@
     position: relative;
 }
 
-.projects--card--button{
+.projects--card--button {
     display: flex;
     flex-direction: column;
     background-color: transparent;
@@ -98,11 +100,11 @@
     align-self: center;
 }
 
-.projects--card--button:hover{
+.projects--card--button:hover {
     cursor: pointer;
 }
 
-.projects--card--button::after{
+.projects--card--button::after {
     position: relative;
     content: '';
     height: 2px;
@@ -115,33 +117,56 @@
     z-index: 0;
 }
 
-.projects--card--button:hover::after{
+.projects--card--button:hover::after {
     height: 10px;
 }
 
 
-@media screen and (max-width: 600px) {
+@media (max-width: 700px) {
+
     .projects--container {
-        position: relative;
-        margin: 0 auto;
-        gap: 10px;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(3, 600px);
-        padding: 30px;
+        grid-template-columns: repeat(1, minmax(400px, 1fr));
+        grid-template-rows: 10px repeat(3, 150px);
+        gap: 100px;
     }
 
-    .projects--card--img img {
-        position: relative;
-        width: 90vw;
-        height: 95%;
-        object-fit: cover;
-        object-position: left;
+
+
+    .projects--card::after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30rem;
+        height: 15rem;
+        z-index: -2;
         border-radius: var(--border-rad);
+        background-color: var(--bright-highlight);
     }
 
-    .projects--card--info{
-        font-size: 30px;
-        top: 3rem;
+    .projects--card:nth-child(odd) {
+        margin-left: 0;
     }
+    
+    .projects--card--info:nth-child(odd) {
+        margin-left: 0;
+    }
+    
+    .projects--card:nth-child(even) {
+        margin-right: 0;
+    }
+    
+    .projects--card--info:nth-child(even) {
+        margin-right: 0;
+    }
+
+    .projects--card--info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        top: 2rem;
+        padding: 10px;
+        position: relative;
+    }
+    
 }
