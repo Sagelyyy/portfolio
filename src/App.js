@@ -12,8 +12,8 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
-      <AnimateBackground />
       <Scrollbar />
+      <AnimateBackground />
       <ContactSidebar />
       <Landing />
       <About />
