@@ -6,7 +6,7 @@ const AnimateBackground = () => {
 
   const canvas = useRef()
   const [ctx, setCtx] = useState()
-  const [dimensions, setDimensions] = useState({ height: window.innerHeight, width: window.innerWidth - 50 })
+  const [dimensions, setDimensions] = useState({ height: window.innerHeight, width: window.innerWidth - 5 })
   const [settings, setSettings] = useState({
     cursorRadius: 100,
     x: 100,
