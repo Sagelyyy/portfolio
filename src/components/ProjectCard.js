@@ -20,7 +20,7 @@ const ProjectCard = (props) => {
                 transition={{ duration: 0.5 }}
                 variants={{
                     visible: { opacity: 1, x: 0 },
-                    hidden: { opacity: 0, x: -200 }
+                    hidden: { opacity: 0, x: 10 }
                 }}
                 id="projects" className='projects--card'>
                 <div className='projects--card--img'>
@@ -45,7 +45,7 @@ const ProjectCard = (props) => {
             transition={{ duration: 0.5 }}
             variants={{
                 visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 200 }
+                hidden: { opacity: 0, x: 10 }
             }}
             id="projects" className='projects--card'>
                 <div className='projects--card--info'>

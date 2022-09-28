@@ -10,8 +10,12 @@ p, h4{
 
 
 html,
-body {
+body,
+#root {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 
 }
 
