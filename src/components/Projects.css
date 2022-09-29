@@ -137,7 +137,7 @@
         top: 0;
         left: 0;
         width: 70vw;
-        height: 50vh;
+        height: 40vh;
         z-index: -2;
         border-radius: var(--border-rad);
         background-color: var(--bright-highlight);
