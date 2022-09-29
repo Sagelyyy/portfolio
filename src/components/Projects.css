@@ -75,7 +75,6 @@
     object-fit: cover;
     object-position: left;
     border-radius: var(--border-rad);
-    aspect-ratio: 1 / 1;
 }
 
 .projects--card--info {
@@ -117,15 +116,18 @@
     height: 10px;
 }
 
-
-@media (max-width: 700px) {
+@media (max-width: 1550px) {
 
     .projects--container {
-        grid-template-columns: repeat(1, minmax(150px, 1fr));
-        grid-template-rows: 10px repeat(3, 250px);
+        grid-template-columns: minmax(150px, 1fr);
+        grid-template-rows: 100px repeat(3, minmax(250px, 1fr));
         gap: 150px;
         margin: 0 auto;
         margin-bottom: 100px;
+    }
+
+    .projects--card{
+        width: 100%;
     }
 
 
@@ -134,35 +136,38 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 20rem;
+        width: 70vw;
+        height: 50vh;
         z-index: -2;
         border-radius: var(--border-rad);
         background-color: var(--bright-highlight);
+
     }
 
     .projects--card:nth-child(odd) {
-        margin-left: 0;
+        margin: 0 auto;
     }
     
     .projects--card--info:nth-child(odd) {
-        margin-left: 0;
+        margin: 0 auto;
         align-items: center;
+        text-align: left;
     }
     
     .projects--card:nth-child(even) {
-        margin-right: 0;
+        margin: 0 auto;
     }
     
     .projects--card--info:nth-child(even) {
-        margin-right: 0;
+        margin: 0 auto;
         align-items: center;
+        text-align: left;
     }
 
     .projects--card--info {
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        gap: 5px;
         top: 2rem;
         padding: 10px;
         position: relative;
@@ -173,4 +178,13 @@
         display: none;
     }
     
+}
+
+@media (min-width: 1000px) { 
+
+    .projects--card--img {
+        display: block;
+        max-height: 80%;
+    }
+
 }

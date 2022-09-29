@@ -1,18 +1,33 @@
-.rtt--container{
-    left: 94vw;
+.rtt--container {
+    left: 1vh;
     bottom: 3vh;
     display: flex;
     flex-direction: column;
-    position: sticky;
+    position: fixed;
     align-items: center;
     width: 64px;
     height: 64px;
+    transition: all 0.5s ease-out;
 }
 
-.rtt--container:hover{
+.rtt--container:hover {
     cursor: pointer;
+    filter: drop-shadow(0px 0px 10px var(--highlight));
 }
 
-.rtt--arrow{
+.rtt--arrow {
     font-size: 64px;
+}
+
+@media (max-width: 1550px) {
+
+    .rtt--container {
+        width: 32px;
+        height: 32px;
+    }
+
+    .rtt--arrow {
+        font-size: 32px;
+    }
+
 }
