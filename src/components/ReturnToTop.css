@@ -1,5 +1,5 @@
 .rtt--container {
-    left: 1vh;
+    left: 95vw;
     bottom: 3vh;
     display: flex;
     flex-direction: column;
@@ -24,6 +24,7 @@
     .rtt--container {
         width: 32px;
         height: 32px;
+        left: 92vw;
     }
 
     .rtt--arrow {

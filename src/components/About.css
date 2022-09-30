@@ -13,6 +13,7 @@
 
 .about--text p {
     font-family: var(--font-secondary);
+    text-align: left;
 }
 
 .about--technologies{

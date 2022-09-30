@@ -8,9 +8,10 @@ const About = () => {
             <Title title="About me" />
             <div className='about--container'>
                 <div className="about--text">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, corporis nobis id dolore explicabo expedita
-                        reprehenderit minus quas voluptate deleniti corrupti quo exercitationem veritatis doloremque error consequatur
-                        nihil unde non.</p>
+                    <p>I've had a life long passion for programming. From tinkering with my own arduinos and raspberry pi, to writing a python
+                        web scraper using selenium to grab D&D spells from a website for a personal Discord bot. I've always found enjoyment
+                        in programming and love to create beautiful websites.
+                    </p>
                 </div>
                 <div className="about--technologies">
                     <div className="about--tech--container">
