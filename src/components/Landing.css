@@ -58,3 +58,13 @@ a{
 body{
     background-color: var(--background);
 }
+
+@media (max-width: 1550px) { 
+
+    .landing--text{ 
+
+        font-size: 15px;
+
+    }
+
+}

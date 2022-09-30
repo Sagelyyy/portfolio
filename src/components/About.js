@@ -7,11 +7,16 @@ const About = () => {
         <div id="about" >
             <Title title="About me" />
             <div className='about--container'>
-                <div className="about--text">
-                    <p>I've had a life long passion for programming. From tinkering with my own arduinos and raspberry pi, to writing a python
-                        web scraper using selenium to grab D&D spells from a website for a personal Discord bot. I've always found enjoyment
-                        in programming and love to create beautiful websites.
-                    </p>
+                <div className="left--container">
+                    <div className='about--image'>
+                        <img src='/images/portrait.jpg' />
+                    </div>
+                    <section className="about--text">
+                        <p>I've had a life long passion for programming. From tinkering with my own arduinos and raspberry pi, to writing a python
+                            web scraper using selenium to grab D&D spells from a website for a personal Discord bot. I've always found enjoyment
+                            in programming and love to create beautiful websites.
+                        </p>
+                    </section>
                 </div>
                 <div className="about--technologies">
                     <div className="about--tech--container">
