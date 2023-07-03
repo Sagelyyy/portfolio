@@ -29,7 +29,6 @@
       ". about-me sidebar"
       ". blog-posts sidebar";
     grid-gap: 20px;
-    border: 2px solid red;
     row-gap: 10px;
   }
 

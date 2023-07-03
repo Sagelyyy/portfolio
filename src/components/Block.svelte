@@ -23,6 +23,8 @@
   .block-title {
     padding: 5px;
     color: var(--font-primary);
+    letter-spacing: 2px;
+    font-size: 1.5rem;
   }
 
   .block-content {

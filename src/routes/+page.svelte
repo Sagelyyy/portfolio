@@ -1,19 +1,20 @@
 <script>
+  import "../global.css";
   import Content from "../components/Content.svelte";
   import Block from "../components/Block.svelte";
   import Title from "../components/Title.svelte";
 </script>
 
 <Title>
-  <h1 slot="page-title">ChrisCanCode</h1>
+  <h1 id="title" slot="page-title">ChrisCanCode</h1>
 </Title>
 
 <Content>
   <Block slot="welcome">
     <h1 slot="title" class="block-title">Welcome</h1>
     <p slot="content">
-      This is my personal portfolio website and blog. I love to program and
-      making fun little things!
+      Hey 👋 my name is Chris Weiskopf and I'm a full stack developer. This is
+      my personal website and blog.
     </p>
   </Block>
   <Block slot="sidebar">
@@ -80,13 +81,41 @@
   }
 
   :global(html, body) {
-    background-color: var(--bg-primary);
-    font-family: var(--font-primary-family);
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
+  :global(body) {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+    background-image: url("/images/pixelbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: contrast(1.2);
+  }
   .block-title {
     align-self: left;
     padding: 5px;
     color: var(--font-primary-color);
+    line-gap-override: 5px;
+    font-family: "Pixeboy", "Inter", sans-serif;
+  }
+
+  p,
+  li {
+    padding: 5px;
+  }
+
+  #title {
+    margin: 10px;
+    text-shadow: 1px 1px 5px black;
+    margin-right: 120px;
   }
 </style>
