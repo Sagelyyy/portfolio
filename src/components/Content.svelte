@@ -14,6 +14,9 @@
   <div class="blog-posts">
     <slot name="blog-posts" />
   </div>
+  <div class="projects">
+    <slot name="projects" />
+  </div>
 </div>
 
 <style>
@@ -23,11 +26,12 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 150px 2fr 1fr;
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas:
       ". welcome sidebar"
+      ". projects sidebar"
       ". about-me sidebar"
-      ". blog-posts sidebar";
+      ". blog-posts .";
     grid-gap: 20px;
     row-gap: 10px;
   }
@@ -40,8 +44,16 @@
     grid-area: welcome;
   }
 
+  .welcome:hover {
+    cursor: pointer;
+  }
+
   .about-me {
     grid-area: about-me;
+  }
+
+  .projects {
+    grid-area: projects;
   }
 
   .blog-posts {
@@ -50,12 +62,15 @@
 
   @media (max-width: 768px) {
     .content {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
+      margin: 0 auto;
+      grid-template-columns: 50px 1fr 50px;
+      grid-template-rows: 1fr;
       grid-template-areas:
-        "welcome"
-        "sidebar"
-        "about-me";
+        ". welcome ."
+        ". projects ."
+        ". about-me ."
+        ". blog-posts ."
+        ". sidebar .";
     }
   }
 </style>
