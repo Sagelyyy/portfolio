@@ -8,14 +8,11 @@
   <div class="welcome">
     <slot name="welcome" />
   </div>
-  <div class="about-me">
-    <slot name="about-me" />
+  <div class="projects">
+    <slot name="projects" />
   </div>
   <div class="blog-posts">
     <slot name="blog-posts" />
-  </div>
-  <div class="projects">
-    <slot name="projects" />
   </div>
 </div>
 
@@ -30,8 +27,7 @@
     grid-template-areas:
       ". welcome sidebar"
       ". projects sidebar"
-      ". about-me sidebar"
-      ". blog-posts .";
+      ".  blog-posts sidebar";
     grid-gap: 20px;
     row-gap: 10px;
   }
@@ -46,10 +42,6 @@
 
   .welcome:hover {
     cursor: pointer;
-  }
-
-  .about-me {
-    grid-area: about-me;
   }
 
   .projects {

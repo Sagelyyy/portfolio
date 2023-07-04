@@ -3,6 +3,8 @@
   import Content from "../components/Content.svelte";
   import Block from "../components/Block.svelte";
   import Title from "../components/Title.svelte";
+  import Copyright from "../components/Copyright.svelte";
+  import Project from "../components/Project.svelte";
 
   let titleClicks = 0;
 
@@ -18,6 +20,11 @@
 <Title>
   <h1 id="title" slot="page-title">
     ChrisCanCod<span
+      role="button"
+      tabindex="0"
+      on:keydown={(e) => {
+        e.key === "Enter" ? counter() : null;
+      }}
       class={titleClicks >= 10 ? "broken-e" : "title-e"}
       on:click={counter}>e</span
     >
@@ -31,18 +38,12 @@
       Hey <span class="wave">👋</span> my name is Chris Weiskopf and I'm a full stack
       developer. This is my personal website and blog.
     </p>
-  </Block>
-  <Block slot="sidebar">
-    <h1 slot="title" class="block-title">Guestbook</h1>
-    <p slot="content">Maybe a guestbook?</p>
-  </Block>
-  <Block slot="about-me">
-    <h1 slot="title" class="block-title">About me</h1>
-    <!--GET Blog data, iterate, anchor tag with link by ID-->
-    <p slot="content">
+
+    <p>
       I love to program things that I enjoy, or things I feel would be useful.
       Here is some fun stuff I have done!
     </p>
+
     <ul>
       <li>
         Experimenting with arduinos and raspberry pi devices to grasp the
@@ -59,7 +60,35 @@
       </li>
     </ul>
   </Block>
+  <Block slot="sidebar">
+    <h1 slot="title" class="block-title">Guestbook</h1>
+    <p slot="content">Maybe a guestbook?</p>
+  </Block>
+  <Block slot="projects">
+    <h1 slot="title" class="block-title">Projects</h1>
+    <div class="project-container">
+      <Project>
+        <h5>Holoscript</h5>
+      </Project>
+      <Project>
+        <h5>Waldo</h5>
+      </Project>
+      <Project>
+        <h5>Bookshelf</h5>
+      </Project>
+      <Project>
+        <h5>Kindness</h5>
+      </Project>
+      <Project>
+        <h5>DnD Bot</h5>
+      </Project>
+      <Project>
+        <h5>Blog</h5>
+      </Project>
+    </div>
+  </Block>
   <Block slot="blog-posts">
+    <!--GET Blog data, iterate, anchor tag with link by ID-->
     <h1 slot="title" class="block-title">Blog Posts</h1>
     <ul>
       <li>
@@ -79,11 +108,9 @@
       </li>
     </ul>
   </Block>
-  <Block slot="projects">
-    <h1 slot="title" class="block-title">Projects</h1>
-    <p slot="content">HEY!</p>
-  </Block>
 </Content>
+
+<Copyright />
 
 <style>
   :global(:root) {
@@ -91,6 +118,7 @@
     --bg-offset: #373d75;
     --font-primary-color: #85c7f2;
     --font-primary-family: "Inter", sans-serif;
+    --radius: 5px;
   }
 
   :global(html, body) {
@@ -153,6 +181,14 @@
   .wave:hover {
     display: inline-block;
     animation: wave 1.5s linear 0.3s infinite alternate;
+  }
+
+  .project-container {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   @keyframes wave {

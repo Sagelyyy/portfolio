@@ -6,7 +6,12 @@
   }
 </script>
 
-<div
+<section
+  role="button"
+  tabindex="0"
+  on:keydown={(e) => {
+    e.key === "Enter" ? clickBox() : null;
+  }}
   on:click={clickBox}
   class={clicked === null
     ? "block-container idle"
@@ -21,14 +26,14 @@
     <slot name="content" />
     <slot />
   </div>
-</div>
+</section>
 
 <style>
   .block-container {
     display: flex;
     flex-direction: column;
     border: 2px solid gray;
-    border-radius: 5px;
+    border-radius: var(--radius);
     background-color: var(--bg-primary);
     transition: all 1.5s;
   }
