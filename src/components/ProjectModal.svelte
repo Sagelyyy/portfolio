@@ -45,14 +45,14 @@
     justify-content: center;
     text-align: center;
     left: 1%;
-    top: 10%;
+    top: 5%;
     display: flex;
     flex-direction: column;
     border: 2px solid gray;
     border-radius: var(--radius);
     background-color: var(--bg-primary);
     padding: 5px;
-    height: 80%;
+    max-height: 90%;
     width: 800px;
     z-index: 10;
   }

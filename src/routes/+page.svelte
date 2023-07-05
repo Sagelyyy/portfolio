@@ -52,7 +52,7 @@
 
 <Content>
   <Block slot="welcome">
-    <h1 slot="title" class="block-title">Welcome</h1>
+    <h1 slot="title" class="title">Welcome</h1>
     <p slot="content">
       Hey <span class="wave">👋</span> my name is Chris Weiskopf and I'm a full stack
       developer. This is my personal website and blog.
@@ -80,11 +80,11 @@
     </ul>
   </Block>
   <Block slot="sidebar">
-    <h1 slot="title" class="block-title">Guestbook</h1>
+    <h1 slot="title" class="title">Guestbook</h1>
     <p slot="content">Maybe a guestbook?</p>
   </Block>
   <Block slot="projects">
-    <h1 slot="title" class="block-title">Projects</h1>
+    <h1 slot="title" class="title">Projects</h1>
     <div class="project-container">
       <Project
         title="Holoscript"
@@ -105,19 +105,33 @@
       <Project
         title="Bookshelf"
         content="A fullstack personal library built using react and firebase with google auth to save your books"
-        subtitle="A persoanl bookshelf"
+        subtitle="A personal bookshelf"
         preview="https://sagelyyy.github.io/react-bookshelf/"
         repo="https://github.com/Sagelyyy/react-bookshelf"
         img="https://camo.githubusercontent.com/112c13846f21a9f14f698439a01cba2f9c8824409c45b6cd986fcf7ee1014b03/68747470733a2f2f692e696d6775722e636f6d2f69494c694542302e6a7067"
       />
-      <Project title="Kindness" />
-      <Project title="DnD Bot" />
+      <Project
+        title="Kindness"
+        content="A small webapp I made to learn postgres and supabase. Built with Svelte and Node.js"
+        subtitle="A kind social media."
+        preview="https://do-good.netlify.app/"
+        repo="https://github.com/Sagelyyy/Kindness-frontend"
+        img="#"
+      />
+      <Project
+        title="DnD Bot"
+        content="A Discord DnD bot I made for me and my friends."
+        subtitle="Get spells and items at your fingertips."
+        repo="https://github.com/Sagelyyy/dnd5ebot"
+        preview="https://github.com/Sagelyyy/dnd5ebot"
+        img="https://github.com/Sagelyyy/dnd5ebot/raw/main/dnd-bot.png"
+      />
       <Project title="Blog" />
     </div>
   </Block>
   <Block slot="blog-posts">
     <!--GET Blog data, iterate, anchor tag with link by ID-->
-    <h1 slot="title" class="block-title">Blog Posts</h1>
+    <h1 slot="title" class="title">Blog Posts</h1>
     <ul>
       <li>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
@@ -146,6 +160,7 @@
     --bg-offset: #373d75;
     --font-primary-color: #85c7f2;
     --font-primary-family: "Inter", sans-serif;
+    --font-primary-title: "Pixeboy", "Inter", sans-serif;
     --radius: 5px;
   }
 
@@ -170,10 +185,10 @@
     background-position: center;
     filter: contrast(1.2);
   }
-  :global(.block-title) {
+  :global(.title) {
     align-self: left;
     color: var(--font-primary-color);
-    font-family: "Pixeboy", "Inter", sans-serif;
+    font-family: var(--font-primary-title);
     letter-spacing: 2px;
     font-size: 2.5rem;
     padding-left: 10px;
