@@ -1,34 +1,36 @@
 <script>
-  import ProjectModal from "./ProjectModal.svelte";
+  import { showModal } from "../utils/stores.js";
 
-  export let showModal;
-
-  function handleModal() {
-    showModal = !showModal;
+  function setModalData() {
+    showModal.set({
+      open: true,
+      title,
+      subtitle,
+      content,
+      img,
+      preview,
+      repo,
+    });
   }
+
+  export let subtitle;
+  export let content;
+  export let img;
+  export let title;
+  export let preview;
+  export let repo;
 </script>
 
-{#if showModal}
-  <ProjectModal {showModal}>
-    <h1 slot="name">TEST</h1>
-    <p slot="content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, iste.
-    </p>
-  </ProjectModal>
-{/if}
-
-<!--|stopPropagation to stop bubbling the click so the flip animation
-on the Block component doesn't play-->
 <div
-  role="button"
   tabindex="0"
+  role="button"
   on:keydown={(e) => {
-    e.key === "Enter" ? handleModal() : null;
+    e.key === "Enter" ? setModalData() : null;
   }}
+  on:click|stopPropagation={setModalData}
   class="project"
-  on:click|stopPropagation={handleModal}
 >
-  <slot />
+  <h5>{title}</h5>
 </div>
 
 <style>

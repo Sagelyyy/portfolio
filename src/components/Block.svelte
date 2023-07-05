@@ -12,7 +12,7 @@
   on:keydown={(e) => {
     e.key === "Enter" ? clickBox() : null;
   }}
-  on:click={clickBox}
+  on:click|stopPropagation={clickBox}
   class={clicked === null
     ? "block-container idle"
     : clicked

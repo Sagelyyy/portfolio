@@ -5,6 +5,14 @@
   import Title from "../components/Title.svelte";
   import Copyright from "../components/Copyright.svelte";
   import Project from "../components/Project.svelte";
+  import ProjectModal from "../components/ProjectModal.svelte";
+  import { showModal } from "../utils/stores";
+
+  let modalData;
+
+  showModal.subscribe((value) => {
+    modalData = value;
+  });
 
   let titleClicks = 0;
 
@@ -16,6 +24,17 @@
     }
   }
 </script>
+
+{#if modalData.open}
+  <ProjectModal>
+    <h1 slot="title">{modalData.title}</h1>
+    <a slot="preview" target="_blank" href={modalData.preview}>Preview</a>
+    <a slot="repo" target="_blank" href={modalData.repo}>Repo</a>
+    <p slot="subtitle">{modalData.subtitle}</p>
+    <img slot="media" src={modalData.img} alt="project" />
+    <p slot="content">{modalData.content}</p>
+  </ProjectModal>
+{/if}
 
 <Title>
   <h1 id="title" slot="page-title">
@@ -67,24 +86,33 @@
   <Block slot="projects">
     <h1 slot="title" class="block-title">Projects</h1>
     <div class="project-container">
-      <Project>
-        <h5>Holoscript</h5>
-      </Project>
-      <Project>
-        <h5>Waldo</h5>
-      </Project>
-      <Project>
-        <h5>Bookshelf</h5>
-      </Project>
-      <Project>
-        <h5>Kindness</h5>
-      </Project>
-      <Project>
-        <h5>DnD Bot</h5>
-      </Project>
-      <Project>
-        <h5>Blog</h5>
-      </Project>
+      <Project
+        title="Holoscript"
+        content="A fullstack social media app built with React and firebase."
+        subtitle="A twitter clone."
+        preview="https://sagelyyy.github.io/holoscript/"
+        repo="https://github.com/Sagelyyy/holoscript"
+        img="https://camo.githubusercontent.com/e1590875694ed0939c7a89d69f5966cf4dca53d637e5f925eee721948d4bf31c/68747470733a2f2f692e696d6775722e636f6d2f6e4d61786856742e706e67"
+      />
+      <Project
+        title="Waldo"
+        content="A fullstack game built with react and firebase for scoring"
+        subtitle="A puzzle adventure game"
+        preview="https://sagelyyy.github.io/wheres-waldo/"
+        repo="https://github.com/Sagelyyy/wheres-waldo"
+        img="https://camo.githubusercontent.com/fd4a90e2b66db3a35570625334bccaf7c49e48bf3e261e5a599dff476d897d24/68747470733a2f2f692e696d6775722e636f6d2f73364c6c7247762e706e67"
+      />
+      <Project
+        title="Bookshelf"
+        content="A fullstack personal library built using react and firebase with google auth to save your books"
+        subtitle="A persoanl bookshelf"
+        preview="https://sagelyyy.github.io/react-bookshelf/"
+        repo="https://github.com/Sagelyyy/react-bookshelf"
+        img="https://camo.githubusercontent.com/112c13846f21a9f14f698439a01cba2f9c8824409c45b6cd986fcf7ee1014b03/68747470733a2f2f692e696d6775722e636f6d2f69494c694542302e6a7067"
+      />
+      <Project title="Kindness" />
+      <Project title="DnD Bot" />
+      <Project title="Blog" />
     </div>
   </Block>
   <Block slot="blog-posts">
@@ -189,6 +217,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+  }
+
+  img {
+    max-width: 760px;
+    height: auto;
+  }
+
+  a {
+    color: white;
+    transition: all 0.5s;
+  }
+
+  a:hover {
+    color: var(--font-primary-color);
   }
 
   @keyframes wave {
