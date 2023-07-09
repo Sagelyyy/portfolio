@@ -6,6 +6,7 @@
   import Copyright from "../components/Copyright.svelte";
   import Project from "../components/Project.svelte";
   import ProjectModal from "../components/ProjectModal.svelte";
+  import Dstar from "../components/Dstar.svelte";
   import { showModal } from "../utils/stores";
 
   let modalData;
@@ -35,6 +36,8 @@
     <p slot="content">{modalData.content}</p>
   </ProjectModal>
 {/if}
+
+<Dstar />
 
 <Title>
   <h1 id="title" slot="page-title">
@@ -116,7 +119,7 @@
         subtitle="A kind social media."
         preview="https://do-good.netlify.app/"
         repo="https://github.com/Sagelyyy/Kindness-frontend"
-        img="#"
+        img="https://i.imgur.com/JV0t9gw.png"
       />
       <Project
         title="DnD Bot"
@@ -208,6 +211,7 @@
 
   .title-e {
     user-select: none;
+    animation: flicker 3s linear 1s normal infinite;
   }
 
   .title-e:hover {
@@ -246,6 +250,30 @@
 
   a:hover {
     color: var(--font-primary-color);
+  }
+
+  @keyframes flicker {
+    0% {
+      color: #1a1e3a;
+    }
+
+    10% {
+      color: var(--font-primary-color);
+    }
+
+    20% {
+      color: #1a1e3a;
+    }
+
+    60% {
+      color: var(--font-primary-color);
+    }
+    80% {
+      color: #1a1e3a;
+    }
+    100% {
+      color: var(--font-primary-color);
+    }
   }
 
   @keyframes wave {

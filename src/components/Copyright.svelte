@@ -13,7 +13,7 @@
   }
 
   footer > h4 {
-    margin-right: 100px;
+    margin-right: 150px;
     color: var(--font-primary-color);
   }
 </style>
