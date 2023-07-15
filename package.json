@@ -15,6 +15,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"chart.js": "^4.3.0",
 		"nanoid": "^4.0.2"
 	}
 }
